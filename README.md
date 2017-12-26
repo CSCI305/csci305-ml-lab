@@ -13,6 +13,11 @@ For this lab, you will use ML. You may use any flavor of ML of your choice. I re
 
 Begin by entering this function in ML. The lines that begin with a semicolon are comment lines that you will fill in.
 
+```ml
+ fun f nil = [] (* a *)
+   | f (x::xs) = x + 1 :: f xs (* b *)
+```
+
 ```lisp
  (define (f lst)
     ; (a) ;
@@ -26,25 +31,24 @@ Begin by entering this function in ML. The lines that begin with a semicolon are
 
 # Lab Questions
  
-1. Run this function as `(f '(3 1 4 1 5 9))`. What output do you get?
+1. Run this function as `f [3, 1, 4, 1, 5, 9]`. What output do you get?
 2. What does this function `f` do?
 3. Give a comment that explains the line following `(a)`.
 4. Give a comment that explains the line following `(b)`.
-5. Give a comment that explains the line following `(c)`.
-6. Trace the call given in Question 1, showing each recursive call to the function. Specifically show each call, expanding the term `lst` to specific lists or atoms at each depth of the recursion.
+5. Trace the call given in Question 1, showing each recursive call to the function. Specifically show each call, expanding the term `lst` to specific lists or atoms at each depth of the recursion.
 
 # Member? function
 
 Write a function `member?` that determines if an element `e` is part of list `lst`. This function will return `#t` if `e` is a member of the list `lst` and `#f` otherwise. You may use common ML functions (e.g., `car, cdr, cons, eq?, eqv?, equal?,` `null?,` and `list?`). If your ML implementation has a built-in member function, you may `not` use it in your answer. Comment your function.
 
 ```ml
- (define (member? e lst)
+ fun isMember e lst
  
  
-    ; complete this function definition
+    (* complete this function definition *)
     
     
- )
+ 
 ```
 
 # Set? function
@@ -53,34 +57,34 @@ Write a function `set?` that checks whether its argument `lst` is a well formed 
 
 For example:
 
-```lisp
- (set? (x y z)) => #t
- (set? (a 1 b 2 c 3)) => #t
- (set? ()) => #t ; empty set is a good set
- (set? (6 2 2)) => #f ; duplicate, bad set
- (set? (x y z x)) => #f ; duplicate, bad set
+```ml
+ isSet [x, y, z] => true
+ isSet [a, 1, b, 2, c, 3] => true
+ isSet [] => #t (* empty set is a good set *)
+ isSet [6, 2, 2] => #f (* duplicate, bad set *)
+ isSet [x, y, z, x] => #f (* duplicate, bad set *)
 ```
 
-```lisp
- (define (set? lst)
+```ml
+ fun isSet lst
  
  
-    ; complete this function definition
+    (* complete this function definition *)
     
     
- )
+
 ```
 
 # Lab Questions
 
 Your answers **must** reflect the output of your code. No credit will be given to answers if you have not submitted the respective correct function implementation.
 
-7. What output do you get for the call: `(member?  'one '(1 2 3 4))`
-8. Does your `member?` function use head or tail recursion?
+7. What output do you get for the call: `isMember  "one" ["1", "2", "3", "4"]`
+8. Does your `isMember` function use head or tail recursion?
 9. What output do you get for the call
  
-```
-  `(set? '(it was the best of times, it was the worst of times))`
+```ml
+  isSet ["it", "was", "the", "best", "of", "times,", "it", "was", "the", "worst", "of", "times"]
 ```
 
 10. Research `tail recursion`. Describe, in a few short sentences, why it can be beneficial to write tail recursing functions.
@@ -89,14 +93,14 @@ Your answers **must** reflect the output of your code. No credit will be given t
 
 Write a function `union` that takes the set union of list `lst1` and list `lst2` and returns a list representing the mathematical union of the two lists. Your function does not need to work on embedded lists. You may use the functions you defined previously (`set?` and `member?`), if useful, in addition to the common ML functions mentioned above. If your ML implementation has a union function, you may **not** use it in your answer. Comment your function.
 
-```lisp
- (define (union lst1 lst2)
+```ml
+ fun union (lst1, lst2)
  
  
-    ; complete this function definition
+    (* complete this function definition *)
     
     
- )
+ 
 ```
 
 
