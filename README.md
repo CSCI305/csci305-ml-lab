@@ -11,16 +11,17 @@ Table of Contents
    * [Troubleshooting](#troubleshooting)
    * [ML](#ml)
       * [What's Alread in the File?](#whats-already-in-the-file)
+      * [Other Files](#other-files)
       * [Warmup](#warmup)
-         * [Lab Questions](#lab-questions)
+         * [Lab Questions 1 - 4](#lab-questions-1---4)
       * [Sets datatype](#sets-datatype)
          * [isMember function](#ismember-function)
          * [list2Set function](#list2set-function)
-         * [Lab Questions](#lab-questions-1)
+         * [Lab Questions 5 - 8](#lab-questions-5---8)
          * [Union function](#union-function)
          * [Intersect function](#intersect-function)
-         * [Lab Questions](#lab-questions-2)
-         * [Lab Questions](#lab-questions-3)
+         * [Lab Questions 9 - 10](#lab-questions-9---10)
+         * [Lab Questions 11 - 15](#lab-questions-11---15)
    * [Submission](#submission)
    * [Grading](#grading)
 
@@ -42,7 +43,7 @@ For this lab, you will use ML. You may use any flavor of ML of your choice. I re
 ## What's Already In the File
 The provided code in file `ml_lab.sml` has the following pieces of code (in order from top to bottom of the file):
 
-**Lines(1-8)** -- A Header Comment Block, fill this in with appropriate information, note that your first and last name do not have angle brackets surrounding them.
+**Lines 1 - 8:** -- A Header Comment Block, fill this in with appropriate information, note that your first and last name do not have angle brackets surrounding them.
 ```ml
 (***************************************************************
 *
@@ -98,7 +99,7 @@ list2Set ["x", "y", "z", "x"];
 f [3, 1, 4, 1, 5, 9]
 
 (* Question 6 *)
-val quest7 = isMember "one" (list2Set ["1", "2", "3", "4"]);
+val quest6 = isMember "one" (list2Set ["1", "2", "3", "4"]);
 print ("\nQuestion 6: " ^ Bool.toString(quest7) ^ "\n");
 
 (* Question 8 *)
@@ -116,6 +117,12 @@ print "\nQuestion 11: ";
 print_str (intersect (list2Set ["stewed", "tomatoes", "and", "macaroni"]) (list2Set ["macaroni", "and", "cheese"]));
 ```
 
+## Other Files
+Along with the source code in `ml_lab.sml` there are three other files:
+* LICENSE - A simple license for this code based on the MIT License.
+* README - What you are currently reading.
+* README.pdf - A pdf version of what you are currently reading.
+
 ## Warmup
 
 Begin by entering this function in ML. The lines that begin with a semicolon are comment lines that you will fill in.
@@ -125,7 +132,7 @@ Begin by entering this function in ML. The lines that begin with a semicolon are
    | f (x::xs) = (x + 1) :: (f xs) (* b *)
 ```
 
-### Lab Questions
+### Lab Questions 1 - 4
 
 1. Run this function as `f [3, 1, 4, 1, 5, 9]`. What output do you get?
 2. What does this function `f` do?
@@ -160,19 +167,19 @@ For example:
  fun isSet set = ; (* complete this function definition *)
  ```
 
-### Lab Questions
+### Lab Questions 5 - 8
 
 Your answers **must** reflect the output of your code. No credit will be given to answers if you have not submitted the respective correct function implementation.
 
-6. What output do you get for the call: `isMember "one" ["1", "2", "3", "4"]`
-7. Does your `isMember` function use head or tail recursion?
-8. What output do you get for the call
+5. What output do you get for the call: `isMember "one" ["1", "2", "3", "4"]`
+6. Does your `isMember` function use head or tail recursion?
+7. What output do you get for the call
 
 ```
   list2Set ["it", "was", "the", "best", "of", "times,", "it", "was", "the", "worst", "of", "times"];
 ```
 
-9. Research `tail recursion`. Describe, in a few short sentences, why it can be beneficial to write tail recursing functions.
+8. Research `tail recursion`. Describe, in a few short sentences, why it can be beneficial to write tail recursing functions.
 
 ### Union function
 
@@ -189,36 +196,36 @@ Write a function `intersect` that takes the set intersection of set `set1` and s
  fun intersect set1 set2 = ; (* Complete this function definition *)
 ```
 
-### Lab Questions
+### Lab Questions 9 - 10
 Your answers **must** reflect the output of your code for these functions. No credit will be given to answers if you have not submitted the respective correct function implementation in ML.
 
-10. What output do you get for the call:
+9. What output do you get for the call:
 
 ```ml
   union (list2Set ["green", "eggs", "and"]) (list2Set ["ham"]);
 ```
 
-11. What output do you get for the call:
+10. What output do you get for the call:
 
 ```ml
   intersect (list2Set ["stewed", "tomatoes", "and", "macaroni"]) (list2Set ["macaroni", "and", "cheese"]);
 ```
 
-### Lab Questions
+### Lab Questions 11 - 15
 
 The following questions are for feedback and evaluation purposes. Points are awarded for any sincere answer.
 
-12. Name something you like about ML. Explain.
-13. Name something you dislike about ML. Explain.
-14. Did you enjoy this lab? Which aspects did you like and/or dislike?
-15. Approximately how many hours did you spend on this lab?
-16. Do you think you will use ML again? For which type(s) of project(s)?
+11. Name something you like about ML. Explain.
+12. Name something you dislike about ML. Explain.
+13. Did you enjoy this lab? Which aspects did you like and/or dislike?
+14. Approximately how many hours did you spend on this lab?
+15. Do you think you will use ML again? For which type(s) of project(s)?
 
 # Submission
 
 Each student will complete and submit this assignment individually. Do not consult with others. However, you are encouraged to use the internet to learn ML **but not to research the questions asked in this lab.**
 
-Comment your program heavily. Intelligent comments and a clean, readable formatting of your code account for 20% of your grade.
+Comment your program appropriately.
 
 Save the final version of your program as `[lastname]_[firstname].ml_lab.ml` Type your lab questions in plain text as `[lastname]_[firstname].ml_lab.questions.txt`. Include your name in the text file.
 
@@ -229,11 +236,11 @@ Submit your files to the ML Lab dropbox folder on BrightSpace. Do not archive yo
 Total Assignment Points: 100, Total Grade Points: 7.5
 
 The rubric for this assignment is as follows:
-* 5 points each for questions 1 - 16
-  - Questions 1, 6, 8, 10, and 11 will be graded all or nothing
-  - Questions 11 - 16, will be given full credit for reasonable answers
+* 5 points each for questions 1 - 15, Total 75 points
+  - Questions 1, 5, 7, 9, and 10 will be graded all or nothing
+  - Questions 11 - 15, will be given full credit for reasonable answers
   - The remaining questions will be graded with partial credit
-* 10 points for working code, with no errors: All or nothing
+* 15 points for working code, with no errors: All or nothing
 * 10 points for documented code
   - 2 points per function: `isMember`, `list2Set`, `union`, and `intersect` commented with a good description of what the function does
   - 2 points for header
