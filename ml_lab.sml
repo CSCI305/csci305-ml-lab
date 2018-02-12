@@ -11,15 +11,15 @@
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
-  | printCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ stringifyCharSet(ys);
+  | stringifyCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ stringifyCharSet(ys);
 
 (* Simple function to stringify the contents of a Set of ints *)
 fun stringifyIntSet Empty = ""
-  | printIntSet (Set(w, ws)) = Int.toString(w) ^ " " ^ stringifyIntSet(ws);
+  | stringifyIntSet (Set(w, ws)) = Int.toString(w) ^ " " ^ stringifyIntSet(ws);
 
 (* Simple function to stringify the contents of a Set of strings *)
 fun stringifyStringSet Empty = ""
-  | printStringSet (Set(z, zs)) = z ^ " " ^ stringifyStringSet(zs);
+  | stringifyStringSet (Set(z, zs)) = z ^ " " ^ stringifyStringSet(zs);
 
 (* Simple function that prints a set of integers *)
 fun print_int x = print ("{ " ^ stringifyIntSet(x) ^ "}\n");
