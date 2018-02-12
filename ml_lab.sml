@@ -36,6 +36,9 @@ list2Set [];
 list2Set [6, 2, 2];
 list2Set ["x", "y", "z", "x"];
 
+(* Question 1 *)
+f [3, 1, 4, 1, 5, 9]
+
 (* Question 6 *)
 val quest7 = isMember "one" (list2Set ["1", "2", "3", "4"]);
 print ("\nQuestion 6: " ^ Bool.toString(quest7) ^ "\n");

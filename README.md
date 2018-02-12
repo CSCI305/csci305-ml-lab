@@ -10,6 +10,7 @@ Table of Contents
 
    * [Troubleshooting](#troubleshooting)
    * [ML](#ml)
+      * [What's Alread in the File?](#whats-already-in-the-file)
       * [Warmup](#warmup)
          * [Lab Questions](#lab-questions)
       * [Sets datatype](#sets-datatype)
@@ -37,6 +38,83 @@ I will gladly answer **clarifying questions about the goals and instructions of 
 
 # ML
 For this lab, you will use ML. You may use any flavor of ML of your choice. I recommend the Standard New Jersey flavor for Linux and MacOS, and PolyML for Windows.
+
+## What's Already In the File
+The provided code in file `ml_lab.sml` has the following pieces of code (in order from top to bottom of the file):
+
+**Lines(1-8)** -- A Header Comment Block, fill this in with appropriate information, note that your first and last name do not have angle brackets surrounding them.
+```ml
+(***************************************************************
+*
+* CSCI 305 - ML Programming Lab
+*
+* <firstname> <lastname>
+* <email-address>
+*
+***************************************************************)
+```
+
+**Line 10:** The place where I would suggest placing your code.
+```ml
+(* Define your data type and functions here *)
+```
+
+**Lines 12 - 31:** Some simple funtions to print the contents of Sets, note these will not work until you have defined the `sets` data type with the corresponding `Set` and `Empty` constructors.
+```ml
+(* Simple function to stringify the contents of a Set of characters *)
+fun stringifyCharSet Empty = ""
+  | printCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ stringifyCharSet(ys);
+
+(* Simple function to stringify the contents of a Set of ints *)
+fun stringifyIntSet Empty = ""
+  | printIntSet (Set(w, ws)) = Int.toString(w) ^ " " ^ stringifyIntSet(ws);
+
+(* Simple function to stringify the contents of a Set of strings *)
+fun stringifyStringSet Empty = ""
+  | printStringSet (Set(z, zs)) = z ^ " " ^ stringifyStringSet(zs);
+
+(* Simple function that prints a set of integers *)
+fun print_int x = print ("{ " ^ stringifyIntSet(x) ^ "}\n");
+
+(* Simple function that prints a set of strings *)
+fun print_str x = print ("{ " ^ stringifyStringSet(x) ^ "}\n");
+
+(* Simple function that prints a set of characters *)
+fun print_chr x = print ("{ " ^ stringifyCharSet(x) ^ "}\n");
+```
+
+**Lines 33 - 37:** Some example code for the `list2Set` function, note this will not work until after you define the `list2Set` function.
+```ml
+list2Set [1, 3, 2];
+list2Set [#"a", #"b", #"c"];
+list2Set [];
+list2Set [6, 2, 2];
+list2Set ["x", "y", "z", "x"];
+```
+
+**Lines 39 - 58:** The code from the lab questions, from which answers to questions 1, 6, 8, 10 and 11 will come.
+```ml
+(* Question 1 *)
+f [3, 1, 4, 1, 5, 9]
+
+(* Question 6 *)
+val quest7 = isMember "one" (list2Set ["1", "2", "3", "4"]);
+print ("\nQuestion 6: " ^ Bool.toString(quest7) ^ "\n");
+
+(* Question 8 *)
+val quest8 = list2Set ["it", "was", "the", "best", "of", "times,", "it", "was", "the", "worst", "of", "times"];
+print "\nQuestion 8: ";
+print_str quest8;
+print "\n";
+
+(* Question 10 *)
+print "\nQuestion 10: ";
+print_str (union (list2Set ["green", "eggs", "and"]) (list2Set ["ham"]));
+
+(* Question 11 *)
+print "\nQuestion 11: ";
+print_str (intersect (list2Set ["stewed", "tomatoes", "and", "macaroni"]) (list2Set ["macaroni", "and", "cheese"]));
+```
 
 ## Warmup
 
@@ -155,5 +233,7 @@ The rubric for this assignment is as follows:
   - Questions 1, 6, 8, 10, and 11 will be graded all or nothing
   - Questions 11 - 16, will be given full credit for reasonable answers
   - The remaining questions will be graded with partial credit
-* 10 points for working code, with no errors
+* 10 points for working code, with no errors: All or nothing
 * 10 points for documented code
+  - 2 points per function: `isMember`, `list2Set`, `union`, and `intersect` commented with a good description of what the function does
+  - 2 points for header
