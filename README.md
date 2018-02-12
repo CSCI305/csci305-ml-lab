@@ -5,6 +5,24 @@
 
 # Due Date: March 09, 2018 at Midnight
 
+Table of Contents
+=================
+
+   * [Troubleshooting](#troubleshooting)
+   * [ML](#ml)
+      * [Warmup](#warmup)
+         * [Lab Questions](#lab-questions)
+      * [Sets datatype](#sets-datatype)
+         * [isMember function](#ismember-function)
+         * [list2Set function](#list2set-function)
+         * [Lab Questions](#lab-questions-1)
+         * [Union function](#union-function)
+         * [Intersect function](#intersect-function)
+         * [Lab Questions](#lab-questions-2)
+         * [Lab Questions](#lab-questions-3)
+   * [Submission](#submission)
+   * [Grading](#grading)
+
 # Troubleshooting
 This lab requires an independent study of the ML language. You are encouraged to use any web tutorials and resources to learn ML beyond those in the book and provided by me (i.e. you will need to find them).
 - ### **Given the size of the class, I will not be able to debug your code for you**
@@ -20,7 +38,7 @@ I will gladly answer **clarifying questions about the goals and instructions of 
 # ML
 For this lab, you will use ML. You may use any flavor of ML of your choice. I recommend the Standard New Jersey flavor for Linux and MacOS, and PolyML for Windows.
 
-# Warmup
+## Warmup
 
 Begin by entering this function in ML. The lines that begin with a semicolon are comment lines that you will fill in.
 
@@ -29,24 +47,24 @@ Begin by entering this function in ML. The lines that begin with a semicolon are
    | f (x::xs) = (x + 1) :: (f xs) (* b *)
 ```
 
-# Lab Questions
+### Lab Questions
 
 1. Run this function as `f [3, 1, 4, 1, 5, 9]`. What output do you get?
 2. What does this function `f` do?
 3. Give a comment that explains the line following `(a)`.
 4. Give a comment that explains the line following `(b)`.
 
-# Sets datatype
+## Sets datatype
 Construct a datatype used to represent sets, called `set`, it should have two different types: `Set` and `Empty`. Where `Set` is of type `'element * 'element set`, meaning that it hold some polymorphic type `'element` and a sets of `'element`.
 
-# isMember function
+### isMember function
 Write a function `isMember` that determines if an element `e` is part of the set, `set`. This function will return `true` if `e` is a member of the set, `set`, and `false` otherwise.
 
 ```ml
  fun isMember e set = ; (* complete this function definition *)
 ```
 
-# list2Set function
+### list2Set function
 
 Write a function `list2Set` that convertes a list into a set ensuring that the properties of a well formed set, i.e., that is has no duplicates, are maintained. You may find it useful to make use of your `isMember` function in your `list2Set` function.
 
@@ -64,7 +82,7 @@ For example:
  fun isSet set = ; (* complete this function definition *)
  ```
 
-# Lab Questions
+### Lab Questions
 
 Your answers **must** reflect the output of your code. No credit will be given to answers if you have not submitted the respective correct function implementation.
 
@@ -78,7 +96,7 @@ Your answers **must** reflect the output of your code. No credit will be given t
 
 9. Research `tail recursion`. Describe, in a few short sentences, why it can be beneficial to write tail recursing functions.
 
-# Union function
+### Union function
 
 Write a function `union` that takes the set union of set `set1` and set `set2` and returns a set representing the mathematical union of the two sets. You may use the functions you defined previously (`list2Set` and `isMember`), if useful, in addition to any of the common ML functions mentioned in class. Comment your function.
 
@@ -86,14 +104,14 @@ Write a function `union` that takes the set union of set `set1` and set `set2` a
  fun union set1 set2 = ; (* complete this function definition *)
 ```
 
-# Intersect function
+### Intersect function
 Write a function `intersect` that takes the set intersection of set `set1` and set `set2` and returns a set representing the mathematical intersection of the two sets. Comment your function.
 
 ```ml
  fun intersect set1 set2 = ; (* Complete this function definition *)
 ```
 
-# Lab Questions
+### Lab Questions
 Your answers **must** reflect the output of your code for these functions. No credit will be given to answers if you have not submitted the respective correct function implementation in ML.
 
 10. What output do you get for the call:
@@ -108,7 +126,7 @@ Your answers **must** reflect the output of your code for these functions. No cr
   intersect (list2Set ["stewed", "tomatoes", "and", "macaroni"]) (list2Set ["macaroni", "and", "cheese"]);
 ```
 
-# Lab Questions
+### Lab Questions
 
 The following questions are for feedback and evaluation purposes. Points are awarded for any sincere answer.
 
@@ -127,3 +145,15 @@ Comment your program heavily. Intelligent comments and a clean, readable formatt
 Save the final version of your program as `[lastname]_[firstname].ml_lab.ml` Type your lab questions in plain text as `[lastname]_[firstname].ml_lab.questions.txt`. Include your name in the text file.
 
 Submit your files to the ML Lab dropbox folder on BrightSpace. Do not archive your files but instead use two attachments. Submit your files before the due date as late submissions will not be accepted.
+
+# Grading
+
+Total Assignment Points: 100, Total Grade Points: 7.5
+
+The rubric for this assignment is as follows:
+* 5 points each for questions 1 - 16
+  - Questions 1, 6, 8, 10, and 11 will be graded all or nothing
+  - Questions 11 - 16, will be given full credit for reasonable answers
+  - The remaining questions will be graded with partial credit
+* 10 points for working code, with no errors
+* 10 points for documented code
