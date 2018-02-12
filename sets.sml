@@ -11,24 +11,24 @@
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
-  | printCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ printCharSet(ys);
+  | printCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ stringifyCharSet(ys);
 
 (* Simple function to stringify the contents of a Set of ints *)
 fun stringifyIntSet Empty = ""
-  | printIntSet (Set(w, ws)) = Int.toString(w) ^ " " ^ printIntSet(ws);
+  | printIntSet (Set(w, ws)) = Int.toString(w) ^ " " ^ stringifyIntSet(ws);
 
 (* Simple function to stringify the contents of a Set of strings *)
 fun stringifyStringSet Empty = ""
-  | printStringSet (Set(z, zs)) = z ^ " " ^ printStringSet(zs);
+  | printStringSet (Set(z, zs)) = z ^ " " ^ stringifyStringSet(zs);
 
 (* Simple function that prints a set of integers *)
-fun print_int x = print ("{ " ^ printIntSet(x) ^ "}\n");
+fun print_int x = print ("{ " ^ stringifyIntSet(x) ^ "}\n");
 
 (* Simple function that prints a set of strings *)
-fun print_str x = print ("{ " ^ printStringSet(x) ^ "}\n");
+fun print_str x = print ("{ " ^ stringifyStringSet(x) ^ "}\n");
 
 (* Simple function that prints a set of characters *)
-fun print_chr x = print ("{ " ^ printCharSet(x) ^ "}\n");
+fun print_chr x = print ("{ " ^ stringifyCharSet(x) ^ "}\n");
 
 list2Set [1, 3, 2];
 list2Set [#"a", #"b", #"c"];
