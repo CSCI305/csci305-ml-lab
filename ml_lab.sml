@@ -39,20 +39,20 @@ list2Set ["x", "y", "z", "x"];
 (* Question 1 *)
 f [3, 1, 4, 1, 5, 9]
 
-(* Question 6 *)
-val quest6 = isMember "one" (list2Set ["1", "2", "3", "4"]);
-print ("\nQuestion 6: " ^ Bool.toString(quest7) ^ "\n");
+(* Question 5 *)
+val quest5 = isMember "one" (list2Set ["1", "2", "3", "4"]);
+print ("\nQuestion 5: " ^ Bool.toString(quest5) ^ "\n");
 
-(* Question 8 *)
-val quest8 = list2Set ["it", "was", "the", "best", "of", "times,", "it", "was", "the", "worst", "of", "times"];
-print "\nQuestion 8: ";
-print_str quest8;
+(* Question 7 *)
+val quest7 = list2Set ["it", "was", "the", "best", "of", "times,", "it", "was", "the", "worst", "of", "times"];
+print "\nQuestion 7: ";
+print_str quest7;
 print "\n";
+
+(* Question 9 *)
+print "\nQuestion 9: ";
+print_str (union (list2Set ["green", "eggs", "and"]) (list2Set ["ham"]));
 
 (* Question 10 *)
 print "\nQuestion 10: ";
-print_str (union (list2Set ["green", "eggs", "and"]) (list2Set ["ham"]));
-
-(* Question 11 *)
-print "\nQuestion 11: ";
 print_str (intersect (list2Set ["stewed", "tomatoes", "and", "macaroni"]) (list2Set ["macaroni", "and", "cheese"]));
