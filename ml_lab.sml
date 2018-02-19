@@ -2,8 +2,8 @@
 *
 * CSCI 305 - ML Programming Lab
 *
-* <firstname> <lastname>
-* <email-address>
+* Nathanial Tranel
+* njtranel@gmail.com
 *
 ***************************************************************)
 
