@@ -8,6 +8,12 @@
 ***************************************************************)
 
 (* Define your data type and functions here *)
+datatype 'element set = Empty | Set of 'element * 'element set;
+
+fun isMember e set =
+  case set of
+    (h::t) => if e=h then true else isMember e t;
+
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
@@ -35,6 +41,9 @@ list2Set [#"a", #"b", #"c"];
 list2Set [];
 list2Set [6, 2, 2];
 list2Set ["x", "y", "z", "x"];
+
+fun f [] = [] (* a *)
+|   f (x::xs) = (x + 1) :: (f xs); (* b *)
 
 (* Question 1 *)
 f [3, 1, 4, 1, 5, 9]
