@@ -10,10 +10,14 @@
 (* Define your data type and functions here *)
 datatype 'element set = Empty | Set of 'element * 'element set;
 
-fun isMember e set =
-  case set of
-    (h::t) => if e=h then true else isMember e t;
+fun isMember e set = 
+	case set of 
+		Empty => false |
+		Set(x,y) => e=x orelse false;
 
+(* needs isMember incorporation *)
+fun list2Set [] = Empty 
+|   list2Set x = Set(hd(x),list2Set(tl(x)));
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
@@ -46,7 +50,7 @@ fun f [] = [] (* a *)
 |   f (x::xs) = (x + 1) :: (f xs); (* b *)
 
 (* Question 1 *)
-f [3, 1, 4, 1, 5, 9]
+f [3, 1, 4, 1, 5, 9];
 
 (* Question 5 *)
 val quest5 = isMember "one" (list2Set ["1", "2", "3", "4"]);

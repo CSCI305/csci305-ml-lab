@@ -13,11 +13,11 @@ is returned is the same list with all the values increased by 1.
 4. Line (b) is the recursive line - given an input list, take the head and add 1. The tail of
 the list is sent through the function f again, and the result is cons-ed to the head plus 1 value.
 
-5.
+5. false
 
-6.
+6. Tail recursion; it compares the head of the set to e and sends the tail through the function again. ??? - research
 
-7.
+7. Set ("it", Set ("was", Set ("the", Set ("best", Set ("of", Set ("times", Set ("worst", Empty)))))))
 
 8.
 
@@ -25,12 +25,18 @@ the list is sent through the function f again, and the result is cons-ed to the 
 
 10.
 
-11.
+11. I like how functions can be written in a "tricky" way using recursion - it feels like the most elegant way to do things,
+as if each function is being written in one line (and it sort of is, in a sense). Though it requires some difficult thought
+sometimes, it is a cool way of doing things.
 
-12.
+12. That being said, while it is cool, I do not like the structure that the programs must follow. The recursive nature of 
+functions require that steps all be thought out/written down and then implemented elegant code, whereas more familiar 
+languages like Java allow the coder to write one line of code per thought, as the language requires it. ML definitely
+requires a new way of thinking about programming.
 
-13.
+13. 
 
-14.
+14. I probably spent around 12-15 hours total trying to figure out how to do each of the things and experimenting in the
+PolyML shell to get the correct syntax.
 
 15.
