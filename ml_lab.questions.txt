@@ -1,7 +1,7 @@
-<firstname> <lastname>
+Johnny Gaddis
 CSCI 305
 Spring 2018
-Lab Questions
+ML Lab Questions
 =======================
 1.
 

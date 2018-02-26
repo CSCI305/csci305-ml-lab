@@ -2,8 +2,8 @@
 *
 * CSCI 305 - ML Programming Lab
 *
-* <firstname> <lastname>
-* <email-address>
+* Johnny Gaddis
+* johnnygaddis777@gmail.com
 *
 ***************************************************************)
 
