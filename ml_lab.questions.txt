@@ -8,9 +8,9 @@ ML Lab Questions
 
 2. This function increments every value in an array by 1.
 
-3. This line represents a declaration of a function and declares an input parameter of an array in ML.
+3. This line returns an empty list if passed an empty list.
 
-4. This line assigns every value in an array itself plus one.
+4. This line adds one to the head value and then recursively calls the function on the list's tail value.
 
 5.
 

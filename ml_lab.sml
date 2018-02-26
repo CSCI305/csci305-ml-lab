@@ -7,9 +7,20 @@
 *
 ***************************************************************)
 
-(* Define your data type and functions here *)
-fun f [] = [] (* a *)
-  | f (x::xs) = (x + 1) :: (f xs) (* b *)
+(* Function to increment arrays *)
+fun f [] = [] (* Returns an empty list if passed an empty list *)
+  | f (x::xs) = (x + 1) :: (f xs) (* Adds one to the head value and then recursively calls the function on the list's tail value *)
+
+(* Datatype to represent sets *)
+datatype 'element set = Empty
+  | Set of 'element * 'element set;
+
+(* Function to determine if an element is part of a set *)
+fun isMember e set =
+	if
+
+(* Function to turn a list into a set *)
+fun list2Set list = list;
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
