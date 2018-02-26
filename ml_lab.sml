@@ -8,6 +8,8 @@
 ***************************************************************)
 
 (* Define your data type and functions here *)
+fun f [] = [] (* a *)
+  | f (x::xs) = (x + 1) :: (f xs) (* b *)
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
