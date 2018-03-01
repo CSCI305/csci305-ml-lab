@@ -29,7 +29,7 @@ Table of Contents
 This lab requires an independent study of the ML language. You are encouraged to use any web tutorials and resources to learn ML beyond those in the book and provided by me (i.e. you will need to find them).
 - ### **Given the size of the class, I will not be able to debug your code for you**
 - ### **Please do not send panicked emails requesting I fix your bug for you.**
-- ### **Allow yourself plenty of time, and use patience, perseverance, and the internet to debug your code.**
+- ### **Allow yourself plenty of time, and use patience, perseverance, and the Internet to debug your code.**
 
 I will gladly answer **clarifying questions about the goals and instructions of the Lab assignment**. What this means is that if you come to my office hours or email me with questions concerning the following items or their derivatives, the provided stock answer applies. When it comes to these assignments, think of me more as your client/customer who is acquiring your product. **Before coming to me with a question regarding the assignment, ask whether you would ask a client/customer that question.**
 * Can you take a look at this code and tell me what I'm doing wrong? No.
@@ -60,7 +60,7 @@ The provided code in file `ml_lab.sml` has the following pieces of code (in orde
 (* Define your data type and functions here *)
 ```
 
-**Lines 12 - 31:** Some simple funtions to print the contents of Sets, note these will not work until you have defined the `sets` data type with the corresponding `Set` and `Empty` constructors.
+**Lines 12 - 31:** Some simple functions to print the contents of Sets, note these will not work until you have defined the `sets` data type with the corresponding `Set` and `Empty` constructors.
 ```ml
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
@@ -151,7 +151,7 @@ Write a function `isMember` that determines if an element `e` is part of the set
 
 ### list2Set function
 
-Write a function `list2Set` that convertes a list into a set ensuring that the properties of a well formed set, i.e., that is has no duplicates, are maintained. You may find it useful to make use of your `isMember` function in your `list2Set` function.
+Write a function `list2Set` that converts a list into a set ensuring that the properties of a well formed set, i.e., that is has no duplicates, are maintained. You may find it useful to make use of your `isMember` function in your `list2Set` function.
 
 For example:
 
@@ -162,10 +162,6 @@ For example:
  list2Set [6, 2, 2]; => Set (6, Set(2, Empty))
  list2Set ["x", "y", "z", "x"]; => Set ("x", Set ("y", Set ("z", Empty)))
 ```
-
-```ml
- fun isSet set = ; (* complete this function definition *)
- ```
 
 ### Lab Questions 5 - 8
 
@@ -223,7 +219,7 @@ The following questions are for feedback and evaluation purposes. Points are awa
 
 # Submission
 
-Each student will complete and submit this assignment individually. Do not consult with others. However, you are encouraged to use the internet to learn ML **but not to research the questions asked in this lab.**
+Each student will complete and submit this assignment individually. Do not consult with others. However, you are encouraged to use the Internet to learn ML **but not to research the questions asked in this lab.**
 
 Comment your program appropriately.
 
