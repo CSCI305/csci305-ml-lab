@@ -4,12 +4,12 @@
 *
 * Johnny Gaddis
 * johnnygaddis777@gmail.com
-*
+* cmd /c 'sml < ml_lab.sml'
 ***************************************************************)
 
-(* Function to increment arrays *)
+(* Function to increment an array *)
 fun f [] = [] (* Returns an empty list if passed an empty list *)
-  | f (x::xs) = (x + 1) :: (f xs) (* Adds one to the head value and then recursively calls the function on the list's tail value *)
+  | f (x::xs) = (x + 1) :: (f xs); (* Adds one to the head value and then recursively calls the function on the list's tail value *)
 
 (* Datatype to represent sets *)
 datatype 'element set = Empty
@@ -17,7 +17,6 @@ datatype 'element set = Empty
 
 (* Function to determine if an element is part of a set *)
 fun isMember e set =
-	if
 
 (* Function to turn a list into a set *)
 fun list2Set list = list;
