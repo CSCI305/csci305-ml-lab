@@ -8,18 +8,25 @@
 ***************************************************************)
 
 (* Define your data type and functions here *)
-
+fun f[] = [] (*if the input is an empty list, it will return empty list*)
+         | f (x::xs) = (x + 1) :: (f xs) (*x is head of list, xs is tail; adds 1
+         to x and then uses recursion to add 1 to xs*)
 
  datatype 'element set =
      Empty | Set of 'element * 'element set;
 
 fun isMember e Empty = false
          
-          (*fun f [] = []
-                        | f (x::xs) = (x + 1) :: (f xs);*) 
+           |  isMember e (Set(x, xs)) =
+                if (e = x) then true
+                else isMember e xs;
  
 
-fun list2Set []= Empty
+fun list2Set []= []
+           | list2Set (x::nil) = Set(x,Empty)
+           | list2Set (x::xs) = 
+               if isMember x (Set(hd(xs), list2Set(xs))) then list2Set(xs)
+               else Set(x, list2Set(xs));
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
