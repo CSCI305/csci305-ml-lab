@@ -9,16 +9,16 @@
 
 (* Define your data type and functions here *)
 
- datatype 'element set =
+ datatype 'l set =
                  Empty
-           | Set of 'element * 'element set;
+           | Set of 'l * 'l set;
 
-fun isMember element set =
+fun isMember l set =
          if 
 fun f [] = []
     | f (x::xs) = (x + 1) :: (f xs); 
 
-fun list2Set L = L;
+fun list2Set X= X;
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
