@@ -9,14 +9,14 @@
 
 (* Define your data type and functions here *)
 
- datatype 'element set =
-                 Empty
-           | Set of 'element * 'element set;
+ datatype 'l set =
+     Empty
+           | Set of 'l * 'l set;
 
 fun isMember element set =
          if 
-fun f [] = []
-    | f (x::xs) = (x + 1) :: (f xs); 
+          fun f [] = []
+                        | f (x::xs) = (x + 1) :: (f xs); 
 
 fun list2Set L = L;
 
