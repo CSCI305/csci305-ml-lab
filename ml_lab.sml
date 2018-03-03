@@ -9,6 +9,7 @@
 
 (* Define your data type and functions here *)
 
+
  datatype 'element set =
      Empty | Set of 'element * 'element set;
 
@@ -16,8 +17,9 @@ fun isMember e Empty = false
          
           (*fun f [] = []
                         | f (x::xs) = (x + 1) :: (f xs);*) 
+ 
 
-fun list2Set [] = Empty
+fun list2Set []= Empty
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
