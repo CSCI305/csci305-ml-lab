@@ -26,11 +26,11 @@ fun list2Set []= Empty
            
            | list2Set (x::xs) = 
                 let 
-                  val i = list2set xs
+                  val i = list2Set xs
                 in
                   if (isMember (x,i))
                   then
-                    list2set xs
+                    list2Set xs
                   else
                     Set(x,i)
                 end
