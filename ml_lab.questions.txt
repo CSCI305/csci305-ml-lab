@@ -1,4 +1,4 @@
-<firstname> <lastname>
+Ashlan Olson
 CSCI 305
 Spring 2018
 Lab Questions
