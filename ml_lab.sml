@@ -28,9 +28,7 @@ fun list2Set []= Empty
                 let fun dupl [] = Empty
                   | dupl (x::xs) = Set(x, dupl(xs))
                 in
-                  if isMember x dupl xs
-                   then
-                    list2Set xs
+                  if isMember x (dupl(xs)) then list2Set xs
                   else
                     Set(x,list2Set(xs))
                 end;
