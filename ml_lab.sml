@@ -22,11 +22,30 @@ fun isMember e Empty = false
                 else isMember e xs;
  
 
-fun list2Set []= []
-           | list2Set (x::nil) = Set(x,Empty)
+fun list2Set []= Empty
+           
            | list2Set (x::xs) = 
-               if isMember x (Set(hd(xs), list2Set(xs))) then list2Set(xs)
-               else Set(x, list2Set(xs));
+                let 
+                  val i = list2set xs
+                in
+                  if (isMember (x,i))
+                  then
+                    list2set xs
+                  else
+                    Set(x,i)
+                end
+
+fun union set1 Empty = set1
+            | union Empty set2 = set2
+            | union (Set(x, xs)) set2 =
+                 if isMember x set2 then union xs set2
+                 else Set(x, union xs set2)
+
+fun intersect set1 Empty = Empty
+           | intersect Empty set2 = Empty
+           | intersect (Set(x, xs)) set2 =
+                 if isMember x set2 then Set(x, intersect xs set2) else
+                   intersect xs set2
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
