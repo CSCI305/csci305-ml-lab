@@ -2,12 +2,48 @@
 *
 * CSCI 305 - ML Programming Lab
 *
-* <firstname> <lastname>
-* <email-address>
+* Ashlan Olson
+* ashlan.olson@outlook.com
 *
 ***************************************************************)
 
 (* Define your data type and functions here *)
+fun f[] = [] (*if the input is an empty list, it will return empty list*)
+         | f (x::xs) = (x + 1) :: (f xs); (*x is head of list, xs is tail; adds 1
+         to x and then uses recursion to add 1 to xs*)
+
+ datatype 'element set =
+     Empty | Set of 'element * 'element set;
+
+fun isMember e Empty = false
+         
+           |  isMember e (Set(x, xs)) =
+                if (e = x) then true
+                else isMember e xs;
+ 
+
+fun list2Set []= Empty
+           
+           | list2Set (x::xs) = 
+                let fun dupl [] = Empty
+                  | dupl (x::xs) = Set(x, dupl(xs))
+                in
+                  if isMember x (dupl(xs)) then list2Set xs
+                  else
+                    Set(x,list2Set(xs))
+                end;
+
+fun union set1 Empty = set1
+            | union Empty set2 = set2
+            | union (Set(x, xs)) set2 =
+                 if isMember x set2 then union xs set2
+                 else Set(x, union xs set2);
+
+fun intersect set1 Empty = Empty
+           | intersect Empty set2 = Empty
+           | intersect (Set(x, xs)) set2 =
+                 if isMember x set2 then Set(x, intersect xs set2) else
+                   intersect xs set2;
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
