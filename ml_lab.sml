@@ -2,12 +2,23 @@
 *
 * CSCI 305 - ML Programming Lab
 *
-* <firstname> <lastname>
-* <email-address>
+* Isaac Griffith
+* isaac.griffith@msu.montana.edu
 *
 ***************************************************************)
 
-(* Define your data type and functions here *)
+fun f [] = [] (* a *)
+  | f (x::xs) = (x + 1) :: (f xs); (* b *)
+
+(*Question 1 *)
+print "\nQuestion 1:";
+f [3, 1, 4, 1, 5, 9];
+print "\n";
+
+(* Data Type which defines the Set as being either Empty or Composed with a given element *)
+datatype 'element set =
+  Empty |
+  Set of 'element * 'element set;
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
@@ -30,14 +41,27 @@ fun print_str x = print ("{ " ^ stringifyStringSet(x) ^ "}\n");
 (* Simple function that prints a set of characters *)
 fun print_chr x = print ("{ " ^ stringifyCharSet(x) ^ "}\n");
 
+(* Function which tests whether e is an element of a Set *)
+fun isMember e Empty = false
+  | isMember e (Set(x, xs)) =
+      if e = x then true
+      else isMember e xs;
+
+(* Function which constructs a set from a list *)
+fun list2Set [] = Empty
+  | list2Set (x::xs) =
+      let
+        val y = list2Set xs
+      in
+        if (isMember x y) then y
+        else Set (x, y)
+      end;
+
 list2Set [1, 3, 2];
 list2Set [#"a", #"b", #"c"];
 list2Set [];
 list2Set [6, 2, 2];
 list2Set ["x", "y", "z", "x"];
-
-(* Question 1 *)
-f [3, 1, 4, 1, 5, 9]
 
 (* Question 5 *)
 val quest5 = isMember "one" (list2Set ["1", "2", "3", "4"]);
@@ -48,6 +72,26 @@ val quest7 = list2Set ["it", "was", "the", "best", "of", "times,", "it", "was", 
 print "\nQuestion 7: ";
 print_str quest7;
 print "\n";
+
+(* Function which computes the union of two sets *)
+fun union Empty Empty = Empty
+  | union set1 Empty = set1
+  | union Empty set2 = set2
+  | union (Set(x, xs)) y =
+      let
+        val z = union xs y
+      in
+        if not(isMember x z) then Set (x, z)
+        else z
+      end;
+
+(* Funtion which computes the intersection of two sets *)
+fun intersect Empty Empty = Empty
+  | intersect set1 Empty = Empty
+  | intersect Empty set2 = Empty
+  | intersect (Set(x, xs)) y =
+      if (isMember x y) then Set(x, (intersect xs y))
+      else intersect xs y;
 
 (* Question 9 *)
 print "\nQuestion 9: ";
